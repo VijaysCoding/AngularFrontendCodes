@@ -1,0 +1,55 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="data">
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <mat-header-cell class="w-75" *matHeaderCellDef [ngClass]="'w-75'"> ID </mat-header-cell>
+            <mat-cell *matCellDef="let element" [ngClass]="'w-75'"> {{element.id}} </mat-cell>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="account">
+            <mat-header-cell *matHeaderCellDef> Account </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.account}} </mat-cell>
+        </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="createdOn">
+            <mat-header-cell *matHeaderCellDef> Created On </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.createdOn}} </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="createdBy" >
+            <mat-header-cell *matHeaderCellDef> Created By </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.createdBy}}</mat-cell>
+        </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="currency">
+            <mat-header-cell *matHeaderCellDef> Currency </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.currency}}</mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <button (click)="deleteAccount(element.id)" (click)="refresh()" >Delete</button></mat-cell>
+        </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="edit">
+            <mat-header-cell *matHeaderCellDef> Update </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <button (click)="updateAccount()" >Update</button></mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:  columnsToDisplay;"></mat-row>
+    </mat-table>
+    
+<!-- </div>
+<div class="row">
+    <button mat-stroked-button (click)="addAccount()" class="btn btn-warning">Add Account</button>
+</div> -->

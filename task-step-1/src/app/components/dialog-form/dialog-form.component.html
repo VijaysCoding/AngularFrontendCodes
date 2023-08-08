@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="assetsForm">
+        <mat-form-field style="margin-top: 5px;" appearance="outline">
+            <mat-label>Description</mat-label>
+            <input formControlName="description" matInput type="text" placeholder="Description" />
+            <!-- <mat-hint>Description</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Account</mat-label>
+            <input formControlName="account" matInput type="number" placeholder="Account" />
+            <!-- <mat-hint>Account</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Created On</mat-label>
+            <input formControlName="createdOn" matInput type="datetime" [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <!-- <mat-hint>Description</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Created By</mat-label>
+            <input formControlName="createdBy" matInput type="text" placeholder="Created By" />
+            <!-- <mat-hint>Created By</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Currency</mat-label>
+            <input formControlName="currency" matInput placeholder="Currency" />
+            <!-- <mat-hint>Currency</mat-hint> -->
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button class="abtn" mat-raised-button color="primary" (click)="createAsset()">{{actionBtn}}</button>
+    <button class="abtn" mat-raised-button color="warn" mat-dialog-close>Close</button>
+
+</div>

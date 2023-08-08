@@ -1,0 +1,29 @@
+<div class="container">
+    <h2 class="text-center">Account List</h2>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Account</th>
+                <th>Create On</th>
+                <th>Create By</th>
+                <th>Currency</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td> {{ user.id }} </td>
+                <td> {{ user.description }} </td>
+                <td> {{ user.account }} </td>
+                <td> {{ user.createdOn }} </td>
+                <td> {{ user.createdBy }} </td>
+                <td> {{ user.currency }} </td>
+                <td>
+                    <button (click) = "updateUser(user.id)" class="btn btn-outline-success">Update</button> &nbsp;&nbsp;&nbsp;
+                    <button (click) = "deleteUser(user.id)" class="btn btn-outline-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <h2 class="text-center">Create Table</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="id"> Id </label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="user.id" name="id">
+        </div>
+        <div class="form-group">
+            <label for="description"> Description </label>
+            <input type="text" class="form-control" id="description" [(ngModel)]="user.description" name="description">
+        </div>
+        <div class="form-group">
+            <label for="account"> Account </label>
+            <input type="text" class="form-control" id="account" [(ngModel)]="user.account" name="account">
+        </div>
+        <div class="form-group">
+            <label for="createdOn"> Created On</label>
+            <input type="createdOn" class="form-control" id="createdOn" [(ngModel)]="user.createdOn" name="createdOn">
+        </div>
+        <div class="form-group">
+            <label for="createdBy"> Created By</label>
+            <input type="createdBy" class="form-control" id="createdBy" [(ngModel)]="user.createdBy" name="createdBy">
+        </div>
+        <div class="form-group">
+            <label for="currency"> Currency</label>
+            <input type="currency" class="form-control" id="currency" [(ngModel)]="user.currency" name="currency">
+        </div>
+
+
+        
+        <br><button class="btn btn-outline-success" type="submit">Submit</button>
+    </form>
+</div>
